@@ -1,7 +1,7 @@
 /// twitch-videoad.js
 const origFetch = window.fetch;
+const newType = new URLSearchParams(window.location.search).get("newType") || "thunderdome";
 window.fetch = (url, init, ...args) => {
-	const newType = "thunderdome2"
 	if (typeof url === "string") {
 		if (url.includes("/access_token")) {
 			url = url.replace("player_type=site", `player_type=${newType}`);
