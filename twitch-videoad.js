@@ -1,7 +1,7 @@
 /// twitch-videoad.js
 const origFetch = window.fetch;
 let newType='site';
-setTimeout(() => {newType = "thunderdome", 5 * 1000; console.log('changed')});
+setTimeout(() => {newType = "thunderdome"; console.log('changed')}, 5 * 1000);
 window.fetch = (url, init, ...args) => {
 	if (typeof url === "string") {
 		if (url.includes("/access_token")) {
